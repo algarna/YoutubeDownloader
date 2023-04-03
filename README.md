@@ -1,0 +1,1 @@
+A small project in Python to download and manage videos and playlists from YouTube, using the pytube library.
