@@ -1,4 +1,4 @@
-from pytube import YouTube, Playlist
+from pytube import YouTube, Playlist, Channel
 
 def Progress(stream, data_chunk, bytes_remaining):
     size = stream.filesize
@@ -30,12 +30,22 @@ def PlaylistOption():
         video_counter += 1
     MainMenu()
 
+# def ChannelOption():
+#     link = input("Enter the YouTube channel URL: ")
+#     channelObject = Channel(link)
+#     video_counter = 1
+#     for videoUrl in channelObject.video_urls:
+#         print("Downloading video " + str(video_counter) + " of " + str(len(channelObject.video_urls)))
+#         Download(videoUrl)
+#         video_counter += 1
+#     MainMenu()
+
 def MainMenu():
     print(" ")
     print("Welcome, please choose a download option: ")
     print("1. Single video")
     print("2. Playlist")
-    print("3. Channel")
+    # print("3. Channel")
     print("0. Exit")
     option = input("Your option: ")
     try:
@@ -46,6 +56,8 @@ def MainMenu():
             SingleVideoOption()
         elif option == 2:
             PlaylistOption()
+        # elif option == 3:
+        #     ChannelOption()
         else:
             print("Invalid option")
             MainMenu()
